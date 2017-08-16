@@ -1,0 +1,32 @@
+{
+  "name": "node-percona-cli-status",
+  "version": "1.0.0",
+  "description": "",
+  "main": "config.local.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/binRick/node-percona-cli-status.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/binRick/node-percona-cli-status/issues"
+  },
+  "homepage": "https://github.com/binRick/node-percona-cli-status#readme",
+  "dependencies": {
+    "async": "^2.5.0",
+    "chalk": "^2.1.0",
+    "cli-clear": "^1.0.4",
+    "mysql": "^2.14.1",
+    "ora": "^1.3.0",
+    "pretty-bytes": "^4.0.2",
+    "pretty-tree": "^1.0.0",
+    "prettyjson": "^1.2.1",
+    "ssh2": "^0.5.5",
+    "tunnel-ssh": "^4.1.3",
+    "underscore": "^1.8.3"
+  }
+}
