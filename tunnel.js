@@ -11,7 +11,6 @@ var fs = require('fs'),
     pb = require('pretty-bytes'),
     ora = require('ora'),
     tree = require('pretty-tree'),
-    Client = require('ssh2').Client,
     intervalTime = 1000;
 
 var querySQLs = function(destinationServers) {
