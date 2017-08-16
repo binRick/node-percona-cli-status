@@ -28,4 +28,5 @@ module.exports = {
             localPort: 27024
         },
     ],
+clusterKeys: ['wsrep_local_index', 'wsrep_replicated_bytes', 'wsrep_replicated', 'wsrep_replicated_bytes', 'wsrep_received_bytes', 'wsrep_replicated_bytes', 'wsrep_local_state_comment', 'wsrep_cluster_status', 'wsrep_ready', 'wsrep_connected', 'wsrep_evs_state'],
 };

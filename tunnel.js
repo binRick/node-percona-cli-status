@@ -1,9 +1,9 @@
+#!/usr/bin/env node
 var fs = require('fs'),
     pb = require('pretty-bytes'),
     clear = require('cli-clear'),
     _ = require('underscore'),
     mysql = require('mysql'),
-    pj = require('prettyjson'),
     config = require('./config'),
     tunnel = require('tunnel-ssh'),
     async = require('async'),
@@ -12,7 +12,6 @@ var fs = require('fs'),
     ora = require('ora'),
     tree = require('pretty-tree'),
     Client = require('ssh2').Client,
-    clusterKeys = ['wsrep_local_index', 'wsrep_replicated_bytes', 'wsrep_replicated', 'wsrep_replicated_bytes', 'wsrep_received_bytes', 'wsrep_replicated_bytes', 'wsrep_local_state_comment', 'wsrep_cluster_status', 'wsrep_ready', 'wsrep_connected', 'wsrep_evs_state'],
     intervalTime = 1000;
 
 var querySQLs = function(destinationServers) {
@@ -31,7 +30,7 @@ var querySQLs = function(destinationServers) {
         _.each(sqlResults, function(sqlResult) {
             var Label = sqlResult.destinationServer.destinationServer.hostname + ' :: ' + sqlResult.destinationServer.destinationServer.host + ':' + sqlResult.destinationServer.destinationServer.port;;
             var Leaf = {};
-            _.each(clusterKeys, function(clusterKey) {
+            _.each(config.clusterKeys, function(clusterKey) {
                 Leaf[clusterKey] = _.findWhere(sqlResult.results, {
                     Variable_name: clusterKey,
                 }).Value;
